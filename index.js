@@ -1,5 +1,6 @@
 
 const vLogger = {}
+
 vLogger.install = function (Vue, options) {
   var logger = {
     dev: true,
@@ -26,4 +27,9 @@ vLogger.install = function (Vue, options) {
   Vue.prototype.$log = logger
   Vue.log = logger
 }
-export default vLogger
+
+if (typeof exports == "object") {
+  module.exports = vLogger
+} else {
+  define([], function(){ return vLogger })
+}
