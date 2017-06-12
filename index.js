@@ -33,3 +33,4 @@ if (typeof exports == "object") {
 } else {
   define([], function(){ return vLogger })
 }
+
